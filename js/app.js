@@ -6,9 +6,8 @@ app.controller("chrisCtrl", ["$scope", "$firebaseArray", "$firebaseObject",
 		var ref = new Firebase("https://yoboredprofile.firebaseio.com");
 		$scope.messages = $firebaseArray(ref);
 
-		//ADD MESSAGE METHOD
+		//Add Message Enter
 		$scope.addMessage = function(e) {
-
 
 		  if (e.keyCode === 13 && $scope.myMessage) {
 
@@ -22,6 +21,7 @@ app.controller("chrisCtrl", ["$scope", "$firebaseArray", "$firebaseObject",
 		  }
 		}
 
+		//Click Add Message
 		$scope.clickAddmessage = function(e) {
 
 		    var myName = $scope.myName;
@@ -33,7 +33,17 @@ app.controller("chrisCtrl", ["$scope", "$firebaseArray", "$firebaseObject",
 		    $scope.myMessage = "";
 		}
 
+		//Delete Message
+		var list = $firebaseArray(ref);
+		var listIndexnumber = list.$index;
+		console.log(list);
+
+		$scope.deleteMessage = function(e) {
+			var item = list[this.$index];
+			list.$remove(item).then(function(ref) {
+			  ref.key() === item.$id;
+			});
+		}
 	}
 ]);
-
 
