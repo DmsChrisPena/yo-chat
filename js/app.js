@@ -1,11 +1,3 @@
-// var myAge = prompt("What is your age?");
-
-// if(myAge < 21) {
-// 	alert("Sorry you can't enter the club.");
-// } else {
-// 	alert("Welcome to the club!");
-// }
-
 var app = angular.module("chrisApp", ["firebase"]);
 
 app.controller("chrisCtrl", ["$scope", "$firebaseArray", "$firebaseObject", 
@@ -30,6 +22,18 @@ app.controller("chrisCtrl", ["$scope", "$firebaseArray", "$firebaseObject",
 		  }
 		}
 
+		$scope.clickAddmessage = function(e) {
+
+		    var myName = $scope.myName;
+		    var myMessage = $scope.myMessage;
+
+		    $scope.messages.$add({ from: myName, body: myMessage});
+
+		    $scope.myName = "";
+		    $scope.myMessage = "";
+		}
+
 	}
 ]);
+
 

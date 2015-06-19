@@ -50,22 +50,27 @@
 			</div>
 		</div>
 
-		<div style="margin-top: 30px" class="row">
+		<div style="margin-top: 20px" class="row">
 			<div class="col-md-offset-3 col-md-6">
 				<form class="form-horizontal">
 				    <fieldset>
-				      <div class="form-group">
-				        <label for="inputEmail" class="col-lg-2 control-label">Username</label>
-				        <div class="col-lg-10">
-				          <input class="form-control" ng-model="myName" ng-keydown="addMessage($event)" type="text" id="nameInput"  placeholder="Enter your Name...">
-				        </div>
-				      </div>
-				      <div class="form-group">
-				        <label for="inputPassword" class="col-lg-2 control-label">Message</label>
-				        <div class="col-lg-10">
-				          <textarea class="form-control" rows="6" ng-model="myMessage" ng-keydown="addMessage($event)" type="text" id="messageInput"  placeholder="Type a message..."></textarea>
-				          </div>
-				       </div>
+				     	<div class="form-group">
+					        <label for="inputEmail" class="col-lg-2 control-label">Username</label>
+					        <div class="col-lg-10">
+					          <input class="form-control" ng-model="myName" ng-keydown="addMessage($event)" type="text" id="nameInput"  placeholder="Enter your Name...">
+					        </div>
+				     	</div>
+					    <div class="form-group">
+					        <label for="inputPassword" class="col-lg-2 control-label">Message</label>
+					        <div class="col-lg-10">
+					          <textarea class="form-control" rows="6" ng-model="myMessage" ng-keydown="addMessage($event)" type="text" id="messageInput"  placeholder="Type a message..."></textarea>
+					      	</div>
+					    </div>
+					    <div class="form-group text-center">
+					        <div class="col-lg-offset-2 col-lg-10">
+					        	<a ng-click="clickAddmessage($event)" href="#" class="btn btn-primary btn-block">Send</a>
+					      	</div>
+					    </div>
 				    </fieldset>
 				</form>
 			</div>
